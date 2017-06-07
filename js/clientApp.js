@@ -1,20 +1,19 @@
-/* global React ReactDOM */
 import React from 'react'
-import ReactDOM from 'react-dom'
-import MyTitle from './myTitle'
+import { render } from 'react-dom'
+import '../public/style.css'
 
-var div = React.DOM.div
-var MyTitleFactory = React.createFactory(MyTitle)
-var myFirstComponent = React.createClass({
-  render: function () {
+const App = React.createClass({
+  render () {
     return (
-      div(null,
-        MyTitleFactory({title: 'props are crazy', color: 'peru'}),
-        MyTitleFactory({title: 'Shut yo face', color: 'tomato'}),
-        MyTitleFactory({title: 'make it till you make it', color: 'rebeccapurple'}),
-        MyTitleFactory({title: 'Attack!!', color: 'darkvioletred'})
-      )
+      <div className="app">
+        <div className='landing'>
+          <h1>BrianVideo</h1>
+          <input type='text' placeholder="search"/>
+          <a>or Browse All</a>
+        </div>
+      </div>
     )
   }
 })
-ReactDOM.render(React.createElement(myFirstComponent), document.getElementById('app'))
+
+render(<App/>, document.getElementById('app'))
