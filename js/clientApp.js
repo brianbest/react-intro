@@ -5,10 +5,10 @@ import '../public/style.css'
 const App = React.createClass({
   render () {
     return (
-      <div className="app">
+      <div className='app'>
         <div className='landing'>
-          <h1>BrianVideo</h1>
-          <input type='text' placeholder="search"/>
+          <h1>BrianVideoTest</h1>
+          <input type='text' placeholder='search' />
           <a>or Browse All</a>
         </div>
       </div>
@@ -16,4 +16,4 @@ const App = React.createClass({
   }
 })
 
-render(<App/>, document.getElementById('app'))
+render(<App />, document.getElementById('app'))

@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   context: __dirname,
@@ -8,8 +8,11 @@ module.exports = {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/public/'
+  },
   resolve: {
-    extensions: ['.js','.json']
+    extensions: ['.js', '.json']
   },
   stats: {
     color: true,
@@ -19,18 +22,24 @@ module.exports = {
   module: {
     rules: [
       {
-        include: path.resolve(__dirname,'js'),
-        test:/\.js$/,
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
+        include: path.resolve(__dirname, 'js'),
+        test: /\.js$/,
         loader: 'babel-loader'
       },
       {
         test: /\.css$/,
-        use:[
+        use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              url:false
+              url: false
             }
           }
         ]
