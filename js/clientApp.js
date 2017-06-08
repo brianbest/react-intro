@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Match } from 'react-router'
-import { HashRouter } from 'react-router-dom'
+// import {  } from 'react-router'
+import { HashRouter, Route } from 'react-router-dom'
 import Landing from './landing'
 import '../public/style.css'
 
@@ -10,7 +10,7 @@ const App = React.createClass({
     return (
       <HashRouter>
         <div className='app'>
-          <Match exactly pattern='/' component={Landing} />
+          <Route exactly pattern='/' component={Landing} />
         </div>
       </HashRouter>
 
